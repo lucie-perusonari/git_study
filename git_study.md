@@ -454,7 +454,7 @@ $ git commit --amend
 > At the end of the amend flow, GitHub Desktop will enable you to force push the branch to update the upstream branch. Force pushing will alter the history on the remote and potentially cause problems for others collaborating on this branch.
 >
 > - amend는 force push를 해야만 적용이 되는데, **해당 commit이 포함된 브런치를 사용하고 있는 사람들에게 영향이 가기 때문**에 위와 같은 메세지가 출력됨.
-> - 따라서 amend는 본인이 새로 작업한 내용에만 사용하는 것이 바람직하다.
+> - **따라서 amend는 본인이 새로 작업한 내용에만 사용하는 것이 바람직하다.**
 
 ## 리모트 저장소
 
@@ -999,7 +999,7 @@ $ git reset HEAD -- fileA
 
 ### 깃의 데이터 저장 방식
 
-![commit-and-tree.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/commit-and-tree.png)
+![commit-and-tree.png](./img/commit-and-tree.png)
 
 - **커밋 개체의 구조**
   - 각 파일의 blob파일
@@ -1007,7 +1007,7 @@ $ git reset HEAD -- fileA
   - 메타데이터와 루트 트리를 가리키는 포인터가 담긴 커밋 개체 하나이다.
 - ⇒ 각 파일의 blob을 전부 생성한 다음에 트리 개체에 담아서 표현하고, 그 뒤 커밋 개체가 이를 참조하는 주소와 메타데이터를 포함.
 
-![commits-and-parents.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/commits-and-parents.png)
+![commits-and-parents.png](./img/commits-and-parents.png)
 
 - 각 커밋 개체는 이전에 존재하던 커밋 개체를 참조한다.
 - Git의 브랜치는 커밋 사이를 가볍게 이동할 수 있는 어떤 포인터 같은 것이다.
@@ -1020,7 +1020,7 @@ $ git reset HEAD -- fileA
 
 ### **새 브랜치 생성하기**
 
-![head-to-master.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/head-to-master.png)
+![head-to-master.png](./img/head-to-master.png)
 
 ```bash
 ## 브런치를 만든다.
@@ -1030,7 +1030,7 @@ $ git branch testing
 
 ### **브랜치 이동하기**
 
-![head-to-testing.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/head-to-testing.png)
+![head-to-testing.png](./img/head-to-testing.png)
 
 ```bash
 ## testing이라는 이름의 브런치로 이동.
@@ -1055,7 +1055,7 @@ $ git checkout develop
 
 ### 갈라지는 브랜치
 
-![advance-master (1).png](Git%2010d95de8ee3a800787ceff9a6b6c5496/advance-master_(1).png)
+![advance-master (1).png](./img/advance-master_(1).png)
 
 - 각각 develop 및 testing 브랜치에서 commit을 했으므로 위와 같은 형태가 된다.
 
@@ -1112,7 +1112,7 @@ $ git log --graph --oneline
 
 ### **브랜치와 Merge 의 기초**
 
-![basic-branching-6.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/basic-branching-6.png)
+![basic-branching-6.png](./img/basic-branching-6.png)
 
 - 위와 같이 commit의 분기가 갈라진 상황일 때, master와 iss53을 merge하면?
   - ⇒ master와 iss의 최신 commit인 C4와 C5를 합치게 된다.
@@ -1270,7 +1270,7 @@ Deleted branch testing (was 2c881ee).
 
 ### **Long-Running 브랜치**
 
-![lr-branches-1.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/lr-branches-1.png)
+![lr-branches-1.png](./img/lr-branches-1.png)
 
 - master, develop, topic으로 브런치 종류를 3단계로 분리한다.
   - master는 가장 안정화된 버전.
@@ -1372,7 +1372,7 @@ $ git branch -vv
 
 ### Rebase의 기초
 
-![basic-rebase-3.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/basic-rebase-3.png)
+![basic-rebase-3.png](./img/basic-rebase-3.png)
 
 - Reapply commits on top of another base tip
   - 다른 베이스의 끝에 commit들을 재 적용한다.
@@ -1385,7 +1385,7 @@ $ git branch -vv
 
 ### **Rebase 활용**
 
-![interesting-rebase-2.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/interesting-rebase-2.png)
+![interesting-rebase-2.png](./img/interesting-rebase-2.png)
 
 - $ git rebase --onto master server client
 - 위와 같은 상황에서 C8, C9를 반영하고 싶을 때에 —onto 옵션을 사용한다.
@@ -1393,7 +1393,7 @@ $ git branch -vv
 
 ### Rebase 의 위험성
 
-![perils-of-rebasing-4.png](Git%2010d95de8ee3a800787ceff9a6b6c5496/perils-of-rebasing-4.png)
+![perils-of-rebasing-4.png](./img/perils-of-rebasing-4.png)
 
 - 공개 저장소에 push한 커밋은 절대로 rebase하면 안 된다.
   - 기본으로 rebase해서 생긴 commit은 원본과는 다름.
@@ -1403,11 +1403,11 @@ $ git branch -vv
 
 ### **Rebase 한 것을 다시 Rebase 하기**
 
-![perils-of-rebasing-5 (1).png](Git%2010d95de8ee3a800787ceff9a6b6c5496/perils-of-rebasing-5_(1).png)
+![perils-of-rebasing-5 (1).png](./img/perils-of-rebasing-5_(1).png)
 
 - 역으로 이 상황에서 공개 저장소의 C4’를 써서 리베이스 하는 것도 가능하다.
   - 현재 브랜치에만 포함된 커밋을 결정한다. (C2, C3, C4, C6, C7)
   - Merge 커밋이 아닌 것을 결정한다. (C2, C3, C4)
   - 이 중 merge할 브랜치에 덮어쓰이지 않은 커밋을 결정한다.
-    - ⇒ C2, C3. C4는 C4’와 동일한 Patch이므로 생략.
+    - ⇒ C2, C3. (C4는 C4’와 동일한 Patch이므로 생략.)
 - 결과적으로 위와 같이 복잡하던 커밋 히스토리가 정리된다.
