@@ -1,0 +1,21 @@
+- [ ] reset에 관한 정보 추가하기.
+  - Merge 시에 적어도 로컬에서 되돌려서 깔끔하게 반영하고 싶음.
+
+- [ ] Credential 관련 정보.
+  - push를 하는데, 의도와는 다른 Credential을 사용하는 문제가 있음.
+  - 이는 windows의 경우 credential manager에 있는 데이터를 전부 없얨으로서 해결이 가능함.
+    - 그러나 git에 인증 정보가 어떤 식으로 저장되는지 파악할 필요가 있음
+  - [GitHub의 자격 증명 캐싱 관련 문서](https://docs.github.com/ko/get-started/git-basics/caching-your-github-credentials-in-git)
+    - Git만으로는 해결이 불가능하고, GitHub의 CLI를 별도로 설치해 작업하면 가능한 듯.
+
+- [ ] 브랜치 관리.
+  - [ ] 브랜치의 CRUD
+    - [ ] commit을 branch로 만들기 => git checkout -b *#branch-name#*
+    - [ ] rebase & merge
+- [ ] 리모트 브랜치 관리.
+  - [ ] 리모트 브랜치의 CRUD
+  - [ ] 리모트 개념.
+    - [ ] 브랜치와 리모트 브랜치의 관계. => -u | --set-upstream
+- [ ] 충돌 관리.
+  - [ ] 충돌 개념.
+  - [ ] 충돌
