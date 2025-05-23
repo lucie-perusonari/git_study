@@ -203,3 +203,4 @@ git rebase --autosquash
   - 먼저 `--fixup` 옵션으로 fixup 커밋을 생성한다.
   - 그렇게 생성된 fixup commit에 amend한다.
   - push하기 전에 rebase 리베이스기점 --auto-squash를 이용해서 커밋을 정리한다.
+    - (* 그러나 이렇게 하더라도 rebase시에 rebase된 커밋에 문제가 생김. => 그렇다면 remote에 대해서 rebase하면 되는 거잖아?)
